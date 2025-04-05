@@ -10,6 +10,7 @@ export default function Home() {
     try {
       const { key } = await createTestKey();
       setMessage(`Created key: ${key} (expires in 100s)`);
+      console.log(message);
     } catch (error) {
       console.error("Error:", error);
       setMessage("Error creating test key");
