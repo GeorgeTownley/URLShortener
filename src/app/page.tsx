@@ -63,7 +63,7 @@ export default function Home() {
         <div className="flex flex-col items-center justify-center min-h-screen">
           <div className="text-center mb-12 space-y-6">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight font-sans tracking-tight text-white">
-              George's
+              George&apos;s
               <br />
               URL Shortener
             </h1>

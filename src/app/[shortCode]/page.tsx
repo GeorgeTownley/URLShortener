@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { redis } from "../../lib/redis";
 import { BackgroundBeams } from "../components/background-beams";
+import Link from "next/link";
 
 interface PageProps {
   params: Promise<{ shortcode: string }>;
@@ -17,15 +18,12 @@ export default async function ShortcodePage({ params }: PageProps) {
     originalUrl = await redis.get(key);
   } catch (error) {
     console.error("Redis error:", error);
-    // If Redis fails, show 404
   }
 
   if (originalUrl && typeof originalUrl === "string") {
-    // Don't wrap redirect in try/catch - it needs to throw to work
     redirect(originalUrl);
   }
 
-  // If no URL found or expired, show 404-like page
   return (
     <div className="min-h-screen bg-neutral-950 relative flex antialiased">
       <BackgroundBeams />
@@ -39,15 +37,15 @@ export default async function ShortcodePage({ params }: PageProps) {
               Short URL Not Found
             </h2>
             <p className="text-white/70 mb-8 max-w-md mx-auto leading-relaxed">
-              This short URL doesn't exist or has expired. URLs are
+              This short URL doesn&apos;t exist or has expired. URLs are
               automatically deleted after 24 hours.
             </p>
-            <a
+            <link
               href="/"
               className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl"
             >
               Create New Short URL
-            </a>
+            </link>
           </div>
         </div>
       </div>
