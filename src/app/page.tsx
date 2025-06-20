@@ -25,12 +25,13 @@ export default function Home() {
       setShortUrl(fullShortUrl);
       setMessage(`Short URL created successfully! (expires in 24h)`);
       console.log(`Stored long URL: ${longUrl} with key: ${key}`);
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Error:", error);
+      const err = error as Error;
 
-      if (error.message?.includes("Daily limit")) {
-        setMessage(`Rate limit reached: ${error.message}`);
-      } else if (error.message?.includes("exceeded")) {
+      if (err.message?.includes("Daily limit")) {
+        setMessage(`Rate limit reached: ${err.message}`);
+      } else if (err.message?.includes("exceeded")) {
         setMessage(
           "Daily URL creation limit has been reached. Please try again tomorrow."
         );

@@ -40,12 +40,12 @@ export default async function ShortcodePage({ params }: PageProps) {
               This short URL doesn&apos;t exist or has expired. URLs are
               automatically deleted after 24 hours.
             </p>
-            <link
+            <Link
               href="/"
               className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl"
             >
               Create New Short URL
-            </link>
+            </Link>
           </div>
         </div>
       </div>
