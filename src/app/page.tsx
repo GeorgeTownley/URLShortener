@@ -28,7 +28,6 @@ export default function Home() {
     } catch (error: any) {
       console.error("Error:", error);
 
-      // Handle rate limiting errors specifically
       if (error.message?.includes("Daily limit")) {
         setMessage(`Rate limit reached: ${error.message}`);
       } else if (error.message?.includes("exceeded")) {
@@ -62,7 +61,6 @@ export default function Home() {
       <BackgroundBeams />
       <div className="max-w-2xl mx-auto p-4 relative z-10 w-full pt-20 md:pt-0">
         <div className="flex flex-col items-center justify-center min-h-screen">
-          {/* Hero Text */}
           <div className="text-center mb-12 space-y-6">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight font-sans tracking-tight text-white">
               George's
@@ -151,7 +149,6 @@ export default function Home() {
             )}
           </div>
 
-          {/* Footer */}
           <div className="mt-8 text-center text-white/60 text-xs sm:text-sm">
             <p>URLs expire after 24 hours • Daily limit: 10,000 URLs</p>
           </div>
