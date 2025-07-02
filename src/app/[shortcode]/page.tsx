@@ -25,7 +25,7 @@ export default async function ShortcodePage({ params }: PageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-neutral-950 relative flex antialiased">
+    <div className="min-h-screen bg-neutral-950 relative flex antialiased overflow-hidden">
       <BackgroundBeams />
       <div className="max-w-2xl mx-auto p-4 relative z-10 w-full">
         <div className="flex flex-col items-center justify-center min-h-screen">
